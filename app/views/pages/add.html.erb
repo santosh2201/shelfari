@@ -1,0 +1,27 @@
+<%= form_tag("/pages/edit", :method=>"post") do %>
+<div style="width:100%" align="center">
+<% if @empty==1 %>
+  <p class="addHeading">Add New Book</p>
+  
+  <p><%= text_field_tag 'bookName',nil,placeholder:'Book Name' %></p>
+  <p><%= text_field_tag 'authorName',nil,placeholder:'Author Name' %></p>
+  <p><%= text_field_tag 'read',nil,placeholder:'Read/Not yet' %></p>
+  <%-#= link_to 'Submit', {:controller => :pages, :action => :edit}, :method => :post -%> 
+  <%= submit_tag("Submit", :class=>"btn btn-success") %>
+
+<% else %>
+  <p class="addHeading">Edit Book</p>
+
+  <p><%= text_field_tag 'bookName', @editbook.book_name,placeholder:'Book Name' %></p>
+  <p><%= text_field_tag 'authorName', @editbook.author_name,placeholder:'Author Name' %></p>
+  <p><%= text_field_tag 'read', @editbook.read,placeholder:'Read/Not yet' %></p>
+  <%= hidden_field_tag 'id', @editbook.id %>
+  <%= submit_tag("Submit", :class=>"btn btn-success") %>
+  <%-#= link_to 'Submit', {:controller => :pages, :action => :edit}, :method => :post -%>
+  <%= link_to 'Delete', {:controller => :pages, :action => :delete, :id=>@editbook.id }, class: "btn btn-danger", :method => :get %>
+
+<% end %>
+</div>
+<% end %>
+
+

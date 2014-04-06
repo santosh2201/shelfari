@@ -1,0 +1,22 @@
+<% @book.each do |t| %>
+	<div class="book-container span5">
+		<div style="width:100%;">
+			<div class="bookImgDiv">
+				<img src="http://www.brainandspinalcord.org/sites/all/themes/garden/images/icon-book-100x100.png">
+			</div>
+			<div>
+				<p class="bookName"><%= t.book_name %></p>
+				<p class="authorName"><%= t.author_name %></p>
+				<p><%= t.read %></p>
+				<% @id = t.id %>
+			
+			</div>
+		</div>
+		<p><%= link_to "Edit", { :controller=>'pages', :action=>'add', :id=>@id }, :method => :get %></p>
+	</div>
+<% end %>
+
+
+<%= button_to "Add", 
+  { :controller=>'pages', :action=>'add' }, 
+  :method => :get,:class => 'btn btn-primary addBookBtn' %>
