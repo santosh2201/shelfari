@@ -11,5 +11,3 @@ Add new book page: New book details are added through this page
 <hr>
 Edit book page : Edit an existing book
 <img src="https://www.diigo.com/item/p/opsrecezcapcsqroazbddcbrqb">
-
-Follow codelearn.org website tutorial to setup this application:<a href="http://www.codelearn.org/ruby-on-rails-tutorial">here</a>
